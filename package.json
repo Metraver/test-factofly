@@ -10,18 +10,25 @@
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
     "prisma:studio": "prisma studio",
-    "setup-db": "docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d postgres",
+    "pull-postgres": "docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d postgres",
     "seed": "tsx prisma/seeder.ts",
-    "setup-db-and-seed": "npm run setup-db && npx prisma migrate dev --name init && npm run seed"
+    "setup-db-and-seed": "npm run pull-postgres && npx prisma migrate deploy && npm run seed"
   },
   "dependencies": {
+    "@mantine/core": "^8.3.12",
+    "@mantine/hooks": "^8.3.12",
     "@prisma/adapter-pg": "^7.2.0",
     "@prisma/client": "^7.2.0",
+    "@tabler/icons-react": "^3.36.1",
+    "@types/bcryptjs": "^2.4.6",
+    "bcryptjs": "^3.0.3",
     "dotenv": "^17.2.3",
     "next": "16.1.2",
+    "next-auth": "^5.0.0-beta.30",
     "pg": "^8.17.1",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "zod": "^4.3.5"
   },
   "devDependencies": {
     "@types/node": "^20",
