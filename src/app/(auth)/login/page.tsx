@@ -71,7 +71,7 @@ export default function LoginPage() {
 
         <Group justify="center" mt="md">
           <Text size="sm" c="dimmed">
-            Don't have an account?{' '}
+            Don{"'"}have an account?{' '}
             <Anchor component={Link} href="/register" size="sm">
               Register
             </Anchor>

@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Project Setup
 
-## Getting Started
+I've spent around 4-5 hours on test task
 
-First, run the development server:
+## To run the project you need 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 1. install dependencies
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    yarn
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 2. Environment variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create `.env.local` from the example file and run:
 
-## Learn More
+    npx auth secret
 
-To learn more about Next.js, take a look at the following resources:
+### 3. Setup database and seed data
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Run:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+    setup-db-and-seed
 
-## Deploy on Vercel
+This command pulls a PostgreSQL image and seeds the database with Pokémon data.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Alternatively, run manually:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+    npx prisma migrate deploy
+    npm run seed
+
+ you can change the amount of pokemons you want to pull here(`test-task/prisma/seeder.ts`), by default it is pulling 60 pokemons 
+
+### 4. Start the application
+
+    npm run dev

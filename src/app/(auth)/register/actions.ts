@@ -55,9 +55,9 @@ export async function registerAction(
         password: hashedPassword,
       },
     });
-
-    redirect('/login');
   } catch (error) {
     return { errors: { global: ['Something went wrong'] } };
   }
+
+  redirect('/login');
 }

@@ -1,4 +1,4 @@
-import { Container, Title, Text, SimpleGrid, Card, Stack } from '@mantine/core';
+import { Container, Title, Text, SimpleGrid, Stack } from '@mantine/core';
 import { getPokemonsQuery, type SortField, type SortOrder } from './query';
 import { PokemonFilters } from './PokemonFilters';
 import PokemonCard from './PokemonCard';

@@ -1,0 +1,34 @@
+# Build outputs
+dist/
+build/
+.next/
+out/
+
+# Dependencies
+node_modules/
+
+# Generated files
+generated/
+*.min.js
+*.min.css
+
+# Lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Environment files
+.env*
+
+# Coverage
+coverage/
+
+# Cache
+.cache/
+.turbo/
+
+# Logs
+*.log
+
+# Prisma migrations
+prisma/migrations/
